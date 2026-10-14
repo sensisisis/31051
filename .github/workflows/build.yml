@@ -19,7 +19,7 @@ jobs:
         run: |
           xcodebuild \
             -project 3105-main-src/ThreeOneOSFive.xcodeproj \
-            -scheme ThreeOneOSFive \
+            -target 3105 \
             -configuration Release \
             -sdk iphoneos \
             -archivePath "$PWD/build/ThreeOneOSFive.xcarchive" \
