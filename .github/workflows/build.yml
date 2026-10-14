@@ -15,15 +15,17 @@ jobs:
           unzip -q 3105-main-redesign.zip
           find 3105-main-src -maxdepth 2 -name '*.xcodeproj' -print
 
-      - name: Compilar archivo unsigned
+      - name: Compilar aplicación unsigned
         run: |
+          mkdir -p build/App
           xcodebuild \
             -project 3105-main-src/ThreeOneOSFive.xcodeproj \
             -target 3105 \
             -configuration Release \
             -sdk iphoneos \
-            -archivePath "$PWD/build/ThreeOneOSFive.xcarchive" \
-            archive \
+            -derivedDataPath "$PWD/build/DerivedData" \
+            CONFIGURATION_BUILD_DIR="$PWD/build/App" \
+            build \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY=""
@@ -31,7 +33,7 @@ jobs:
       - name: Empaquetar IPA unsigned
         run: |
           mkdir -p build/Payload
-          cp -R build/ThreeOneOSFive.xcarchive/Products/Applications/*.app build/Payload/
+          cp -R build/App/3105.app build/Payload/
           (cd build && zip -qr ThreeOneOSFive-unsigned.ipa Payload)
 
       - name: Publicar IPA como artefacto
