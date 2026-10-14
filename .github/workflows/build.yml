@@ -1,0 +1,41 @@
+name: Compilar SensiAura en macOS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Descargar proyecto del repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar código fuente
+        run: |
+          unzip -q 3105-main-redesign.zip
+          find 3105-main-src -maxdepth 3 -name '*.xcodeproj' -print
+
+      - name: Compilar archivo unsigned
+        run: |
+          xcodebuild \
+            -project 3105-main-src/ThreeOneOSFive/ThreeOneOSFive.xcodeproj \
+            -scheme ThreeOneOSFive \
+            -configuration Release \
+            -sdk iphoneos \
+            -archivePath "$PWD/build/ThreeOneOSFive.xcarchive" \
+            archive \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=""
+
+      - name: Empaquetar IPA unsigned
+        run: |
+          mkdir -p build/Payload
+          cp -R build/ThreeOneOSFive.xcarchive/Products/Applications/*.app build/Payload/
+          (cd build && zip -qr ThreeOneOSFive-unsigned.ipa Payload)
+
+      - name: Publicar IPA como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: ThreeOneOSFive-unsigned
+          path: build/ThreeOneOSFive-unsigned.ipa
