@@ -13,12 +13,12 @@ jobs:
       - name: Preparar código fuente
         run: |
           unzip -q 3105-main-redesign.zip
-          find 3105-main-src -maxdepth 3 -name '*.xcodeproj' -print
+          find 3105-main-src -maxdepth 2 -name '*.xcodeproj' -print
 
       - name: Compilar archivo unsigned
         run: |
           xcodebuild \
-            -project 3105-main-src/ThreeOneOSFive/ThreeOneOSFive.xcodeproj \
+            -project 3105-main-src/ThreeOneOSFive.xcodeproj \
             -scheme ThreeOneOSFive \
             -configuration Release \
             -sdk iphoneos \
