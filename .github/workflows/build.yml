@@ -23,7 +23,6 @@ jobs:
             -target 3105 \
             -configuration Release \
             -sdk iphoneos \
-            -derivedDataPath "$PWD/build/DerivedData" \
             CONFIGURATION_BUILD_DIR="$PWD/build/App" \
             build \
             CODE_SIGNING_ALLOWED=NO \
