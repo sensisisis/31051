@@ -11,7 +11,7 @@
 		000000000000000000000010 = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = KeyPanelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		000000000000000000000011 /* KeyPanelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPanelApp.swift; sourceTree = "<group>"; };
 		000000000000000000000012 /* WebPanel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebPanel; sourceTree = "<group>"; };
-		000000000000000000000014 /* AppIcon */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon; sourceTree = "<group>"; };
+		000000000000000000000014 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		000000000000000000000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		000000000000000000000020 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 		000000000000000000000021 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (000000000000000000000002 /* WebPanel in Resources */, 000000000000000000000003 /* AppIcon in Resources */,); runOnlyForDeploymentPostprocessing = 0; };
