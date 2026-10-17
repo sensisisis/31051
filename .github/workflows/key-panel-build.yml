@@ -23,6 +23,10 @@ jobs:
             CODE_SIGN_IDENTITY=""
       - name: Package IPA
         run: |
+          cp key-panel-ios/KeyPanelApp/Assets.xcassets/AppIcon.appiconset/AppIcon60x60.png build/App/KeyPanelApp.app/
+          cp key-panel-ios/KeyPanelApp/Assets.xcassets/AppIcon.appiconset/AppIcon60x60@2x.png build/App/KeyPanelApp.app/
+          cp key-panel-ios/KeyPanelApp/Assets.xcassets/AppIcon.appiconset/AppIcon60x60@3x.png build/App/KeyPanelApp.app/
+          cp key-panel-ios/KeyPanelApp/Assets.xcassets/AppIcon.appiconset/AppIcon76x76@2x.png build/App/KeyPanelApp.app/
           mkdir -p build/Payload
           cp -R build/App/KeyPanelApp.app build/Payload/
           (cd build && zip -qr FaxAura-Key-Panel-unsigned.ipa Payload)
