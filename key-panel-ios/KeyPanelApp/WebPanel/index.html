@@ -1,0 +1,667 @@
+<html lang="pt-BR">
+<!--Pdz Cracked-->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=ai-legible&utm_source=comment&utm_medium=referral&utm_id=314a88ba-8533-4f91-8830-9d57bc2f1ac9
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="hosting-provider" content="Netlify">
+<meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=314a88ba-8533-4f91-8830-9d57bc2f1ac9">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Painel - SENSIAURA</title>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css?v=keys-cloud1">
+</head>
+<body class="auth-locked">
+
+    <div id="login-screen" class="login-screen" role="dialog" aria-modal="true" aria-labelledby="login-title">
+        <div class="login-card">
+            <div class="login-visual-rail" aria-hidden="true">
+                <div class="rail-grid"></div>
+                <div class="rail-orbit rail-orbit-large"></div>
+                <div class="rail-orbit rail-orbit-small"></div>
+                <div class="rail-copy"><span>SECURE</span><span>ACCESS</span><span>GATE</span></div>
+                <div class="rail-footer"><span>SENSIAURA</span><span>EST. 2026</span></div>
+            </div>
+            <div class="login-content">
+                <div class="login-card-topline"><span>SENSIAURA / 01</span><span>AUTH GATE</span></div>
+                <div class="login-system-status" aria-label="Sistema protegido e online">
+                    <span class="login-status-dot" aria-hidden="true"></span>
+                    <span>Sistema protegido</span>
+                    <span class="login-status-divider" aria-hidden="true"></span>
+                    <span>Online</span>
+                </div>
+                <div class="login-card-mark" aria-hidden="true">
+                    <img class="login-card-mark-image" src="assets/img/login-mark.webp" alt="">
+                    <span class="login-card-mark-ring"></span>
+                </div>
+                <div class="login-card-header">
+                    <p class="login-eyebrow">SENSIAURA EXTERNAL <span aria-hidden="true">//</span> PAINEL</p>
+                    <h1 id="login-title">Acesso restrito</h1>
+                    <p>Autorize sua sessão para continuar.</p>
+                </div>
+                <div class="login-assurance" aria-label="Proteções ativas">
+                    <span class="assurance-item"><span class="assurance-icon" aria-hidden="true">✓</span> Verificação local</span>
+                    <span class="assurance-item"><span class="assurance-icon" aria-hidden="true">✓</span> Sessão privada</span>
+                </div>
+                <div class="login-access-meta" aria-label="Nível de acesso">
+                    <span><span class="meta-label">Nível</span> Privado</span>
+                    <span><span class="meta-label">Estado</span> Autorização necessária</span>
+                </div>
+                <div class="login-access-caption"><span class="caption-rule" aria-hidden="true"></span><span>Credencial de sessão</span><span class="caption-rule" aria-hidden="true"></span></div>
+                <form id="login-form" class="access-form" novalidate>
+                    <label class="access-label" for="login-password">Senha de acesso</label>
+                    <div class="access-input-wrapper">
+                        <span class="access-input-icon" aria-hidden="true">&#9679;</span>
+                        <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Digite sua senha" aria-describedby="login-hint login-error login-caps-lock" required autofocus>
+                        <button id="toggle-password" class="password-toggle" type="button" aria-label="Mostrar senha" aria-pressed="false">
+                            <span class="password-toggle-eye" aria-hidden="true"></span>
+                            <span id="password-visibility-label">Mostrar</span>
+                        </button>
+                    </div>
+                    <p id="login-hint" class="access-hint">Sua senha é verificada localmente neste dispositivo.</p>
+                    <p id="login-caps-lock" class="login-caps-lock" role="status" hidden>Bloq Mayús está ativado.</p>
+                    <p id="login-error" class="login-error" role="alert" hidden></p>
+                    <button class="access-submit" type="submit">
+                        <span class="submit-label">Entrar no painel</span>
+                        <span class="submit-spinner" aria-hidden="true"></span>
+                        <span class="submit-arrow" aria-hidden="true">↗</span>
+                    </button>
+                </form>
+                <div class="login-session-note"><span class="session-note-line" aria-hidden="true"></span><span>Sem compartilhamento de credenciais</span><span class="session-note-line" aria-hidden="true"></span></div>
+                <p class="login-card-footer"><span aria-hidden="true">◆</span> Sessão protegida <span aria-hidden="true">◆</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" aria-hidden="true">
+        <div class="dashboard-panel">
+            <!-- Navigation Tabs - Sidebar Lateral -->
+            <div class="nav-tabs">
+            <button class="nav-tab active" data-section="aim">
+                <span class="tab-icon" data-icon="aimbot"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+        <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+    </svg></span>
+                <span class="tab-indicator"></span>
+            </button>
+            <button class="nav-tab" data-section="optimization">
+                <span class="tab-icon" data-icon="misc"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 16V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V16C3 16.5304 3.21071 17.0391 3.58579 17.4142C3.96086 17.7893 4.46957 18 5 18H19C19.5304 18 20.0391 17.7893 20.4142 17.4142C20.7893 17.0391 21 16.5304 21 16Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M3 10H21" stroke="currentColor" stroke-width="2"></path>
+        <path d="M12 6V18" stroke="currentColor" stroke-width="2"></path>
+    </svg></span>
+                <span class="tab-indicator"></span>
+            </button>
+            <button class="nav-tab" data-section="drag">
+                <span class="tab-icon" data-icon="weapon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 2L18 2L16 8L8 8L6 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M8 8L8 20L10 18L12 20L14 18L16 20L16 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <line x1="12" y1="8" x2="12" y2="20" stroke="currentColor" stroke-width="2"></line>
+    </svg></span>
+                <span class="tab-indicator"></span>
+            </button>
+            <button class="nav-tab" data-section="pro">
+                <span class="tab-icon" data-icon="security"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 6V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V6L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg></span>
+                <span class="tab-indicator"></span>
+            </button>
+            <button class="nav-tab" data-section="injection">
+                <span class="tab-icon" data-icon="injection"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M3 3L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"></circle>
+    </svg></span>
+                <span class="tab-indicator"></span>
+            </button>
+        </div>
+
+        <!-- Área Principal com Header e Conteúdo -->
+        <div style="flex: 1; display: flex; flex-direction: column;">
+            <!-- Header do Dashboard -->
+            <div class="dashboard-header">
+                <div class="header-left">
+                    <div class="logo-icon" id="header-logo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+        <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+    </svg></div>
+                    <div class="header-info">
+                        <h1 class="header-title">SENSIAURA EXTERNAL</h1>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <a href="#logout" class="logout-btn" id="logout-btn" aria-label="Sair">
+                        <span class="logout-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+    </svg></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="main-content">
+            <!-- ABA DE MIRA -->
+            <div class="section active" id="aim-section">
+                <div class="section-header">
+                    <div class="section-icon" data-icon="aimbot"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+        <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+    </svg></div>
+                    <div class="section-info">
+                        <h2 class="section-title">Controle de Mira</h2>
+                        <p class="section-description">Configure os recursos de precisão e estabilidade</p>
+                    </div>
+                </div>
+                
+                <div class="cards-grid">
+                    <div class="feature-card" style="transform: translateY(0px);">
+                        <div class="card-header">
+                            <div class="card-icon" data-icon="aimbot"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+        <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+    </svg></div>
+                            <div class="card-title-area">
+                                <h3 class="card-title">Controle de Recoil</h3>
+                                <p class="card-subtitle">Reduz o recuo da arma</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="recoil-toggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="card-status">
+                            <span class="status-badge">Inteligente</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card" style="transform: translateY(0px);">
+                        <div class="card-header">
+                            <div class="card-icon" data-icon="security"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 6V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V6L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg></div>
+                            <div class="card-title-area">
+                                <h3 class="card-title">Aimbot Legit</h3>
+                                <p class="card-subtitle">Melhora o rastreamento</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="focus-toggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="card-status">
+                            <span class="status-badge">Avançado</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card" style="transform: translateY(0px);">
+                        <div class="card-header">
+                            <div class="card-icon" data-icon="weapon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 2L18 2L16 8L8 8L6 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M8 8L8 20L10 18L12 20L14 18L16 20L16 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <line x1="12" y1="8" x2="12" y2="20" stroke="currentColor" stroke-width="2"></line>
+    </svg></div>
+                            <div class="card-title-area">
+                                <h3 class="card-title">Precisão Absoluta</h3>
+                                <p class="card-subtitle">Máxima exatidão</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="precision-toggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="card-status">
+                            <span class="status-badge">Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ABA DE OTIMIZAÇÃO -->
+            <div class="section" id="optimization-section">
+                <div class="section-header">
+                    <div class="section-icon" data-icon="misc"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 16V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V16C3 16.5304 3.21071 17.0391 3.58579 17.4142C3.96086 17.7893 4.46957 18 5 18H19C19.5304 18 20.0391 17.7893 20.4142 17.4142C20.7893 17.0391 21 16.5304 21 16Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M3 10H21" stroke="currentColor" stroke-width="2"></path>
+        <path d="M12 6V18" stroke="currentColor" stroke-width="2"></path>
+    </svg></div>
+                    <div class="section-info">
+                        <h2 class="section-title">Otimização de Performance</h2>
+                        <p class="section-description">Maximize o desempenho do sistema</p>
+                    </div>
+                </div>
+                
+                <div class="cards-grid">
+                    <div class="feature-card">
+                        <div class="card-header">
+                            <div class="card-icon" data-icon="misc"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 16V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V16C3 16.5304 3.21071 17.0391 3.58579 17.4142C3.96086 17.7893 4.46957 18 5 18H19C19.5304 18 20.0391 17.7893 20.4142 17.4142C20.7893 17.0391 21 16.5304 21 16Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M3 10H21" stroke="currentColor" stroke-width="2"></path>
+        <path d="M12 6V18" stroke="currentColor" stroke-width="2"></path>
+    </svg></div>
+                            <div class="card-title-area">
+                                <h3 class="card-title">Estabilização de Tela</h3>
+                                <p class="card-subtitle">Reduz trepidação visual</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="screen-toggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="card-status">
+                            <span class="status-badge">Estável</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="card-header">
+                            <div class="card-icon" data-icon="weapon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 2L18 2L16 8L8 8L6 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M8 8L8 20L10 18L12 20L14 18L16 20L16 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <line x1="12" y1="8" x2="12" y2="20" stroke="currentColor" stroke-width="2"></line>
+    </svg></div>
+                            <div class="card-title-area">
+                                <h3 class="card-title">Diminuir Input Lag</h3>
+                                <p class="card-subtitle">Resposta instantânea</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="lag-toggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="card-status">
+                            <span class="status-badge">Rápido</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card full-width">
+                        <div class="card-header">
+                            <div class="card-icon" data-icon="security"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 6V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V6L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg></div>
+                            <div class="card-title-area">
+                                <h3 class="card-title">Taxa de Hertz</h3>
+                                <p class="card-subtitle">Ajuste a taxa de atualização</p>
+                            </div>
+                            <span class="hertz-display" id="hertz-value">60 Hz</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="range-slider-container">
+                                <input type="range" id="hertz-slider" class="range-slider" min="60" max="144" value="60" step="1">
+                                <div class="range-labels">
+                                    <span>60 Hz</span>
+                                    <span>90 Hz</span>
+                                    <span>120 Hz</span>
+                                    <span>144 Hz</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="card-header">
+                            <div class="card-icon" data-icon="aimbot"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+        <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+    </svg></div>
+                            <div class="card-title-area">
+                                <h3 class="card-title">Tirar Delay</h3>
+                                <p class="card-subtitle">Elimina atrasos</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="delay-toggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="card-status">
+                            <span class="status-badge">Zero Delay</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+            <!-- CONTROLE AVANÇADO DE ARRASTO -->
+            <div class="section" id="drag-section">
+                <div class="section-header">
+                    <div class="section-icon" data-icon="weapon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 2L18 2L16 8L8 8L6 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M8 8L8 20L10 18L12 20L14 18L16 20L16 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <line x1="12" y1="8" x2="12" y2="20" stroke="currentColor" stroke-width="2"></line>
+    </svg></div>
+                    <div class="section-info">
+                        <h2 class="section-title">Controle de Arrasto</h2>
+                        <p class="section-description">Ajuste a sensibilidade de movimento</p>
+                    </div>
+                </div>
+                
+                <div class="drag-selector">
+                    <div class="drag-option" data-value="short">
+                        <div class="drag-icon" data-icon="aimbot"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+        <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+    </svg></div>
+                        <div style="flex: 1;">
+                            <h3 class="drag-title">Curto</h3>
+                            <p class="drag-description">Movimentos rápidos e precisos</p>
+                        </div>
+                        <div class="drag-radio">
+                            <input type="radio" name="drag-level" id="drag-short" value="short">
+                            <label for="drag-short"></label>
+                        </div>
+                    </div>
+                    
+                    <div class="drag-option" data-value="medium">
+                        <div class="drag-icon" data-icon="security"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 6V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V6L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg></div>
+                        <div style="flex: 1;">
+                            <h3 class="drag-title">Médio</h3>
+                            <p class="drag-description">Equilíbrio entre velocidade e controle</p>
+                        </div>
+                        <div class="drag-radio">
+                            <input type="radio" name="drag-level" id="drag-medium" value="medium" checked="">
+                            <label for="drag-medium"></label>
+                        </div>
+                    </div>
+                    
+                    <div class="drag-option" data-value="long">
+                        <div class="drag-icon" data-icon="misc"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 16V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V16C3 16.5304 3.21071 17.0391 3.58579 17.4142C3.96086 17.7893 4.46957 18 5 18H19C19.5304 18 20.0391 17.7893 20.4142 17.4142C20.7893 17.0391 21 16.5304 21 16Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M3 10H21" stroke="currentColor" stroke-width="2"></path>
+        <path d="M12 6V18" stroke="currentColor" stroke-width="2"></path>
+    </svg></div>
+                        <div style="flex: 1;">
+                            <h3 class="drag-title">Longo</h3>
+                            <p class="drag-description">Movimentos suaves e controlados</p>
+                        </div>
+                        <div class="drag-radio">
+                            <input type="radio" name="drag-level" id="drag-long" value="long">
+                            <label for="drag-long"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODO PRO PLAYER -->
+            <div class="section" id="pro-section">
+                <div class="section-header">
+                    <div class="section-icon" data-icon="security"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 6V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V6L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg></div>
+                    <div class="section-info">
+                        <h2 class="section-title">Modo Pro Player</h2>
+                        <p class="section-description">Configuração profissional completa</p>
+                    </div>
+                </div>
+                
+                <div class="pro-mode-container">
+                    <div class="pro-mode-card">
+                        <div class="pro-mode-header">
+                            <div class="pro-mode-icon" data-icon="security"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 6V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V6L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg></div>
+                            <h3 class="pro-mode-title">Pacote Profissional</h3>
+                            <label class="toggle-switch large">
+                                <input type="checkbox" id="pro-toggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="pro-mode-features">
+                            <div class="pro-feature">
+                                <div class="feature-icon-wrapper" data-icon="aimbot"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+        <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+    </svg></div>
+                                <div class="feature-content">
+                                    <h4>Mira Estável</h4>
+                                    <p>Estabilização máxima para precisão</p>
+                                </div>
+                            </div>
+                            
+                            <div class="pro-feature">
+                                <div class="feature-icon-wrapper" data-icon="misc"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 16V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V16C3 16.5304 3.21071 17.0391 3.58579 17.4142C3.96086 17.7893 4.46957 18 5 18H19C19.5304 18 20.0391 17.7893 20.4142 17.4142C20.7893 17.0391 21 16.5304 21 16Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M3 10H21" stroke="currentColor" stroke-width="2"></path>
+        <path d="M12 6V18" stroke="currentColor" stroke-width="2"></path>
+    </svg></div>
+                                <div class="feature-content">
+                                    <h4>Capa Leve</h4>
+                                    <p>Otimização de recursos do sistema</p>
+                                </div>
+                            </div>
+                            
+                            <div class="pro-feature">
+                                <div class="feature-icon-wrapper" data-icon="weapon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 2L18 2L16 8L8 8L6 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M8 8L8 20L10 18L12 20L14 18L16 20L16 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+        <line x1="12" y1="8" x2="12" y2="20" stroke="currentColor" stroke-width="2"></line>
+    </svg></div>
+                                <div class="feature-content">
+                                    <h4>Resposta Rápida</h4>
+                                    <p>Latência mínima e input instantâneo</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="pro-mode-footer">
+                            <div class="pro-status" id="pro-status">
+                                <span class="status-indicator"></span>
+                                <span class="status-text">Desativado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INJEÇÃO -->
+            <div class="section" id="injection-section">
+                <div class="section-header">
+                    <div class="section-icon" data-icon="injection"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M3 3L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"></circle>
+    </svg></div>
+                    <div class="section-info">
+                        <h2 class="section-title">Sistema de Injeção</h2>
+                        <p class="section-description">Gerenciamento de injeção do sistema</p>
+                    </div>
+                </div>
+                
+                <div class="injection-container">
+                    <div class="injection-card">
+                        <div class="injection-visual">
+                            <div class="injection-circle">
+                                <div class="injection-pulse"></div>
+                                <div class="injection-icon" data-icon="injection"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M3 3L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"></circle>
+    </svg></div>
+                            </div>
+                        </div>
+                        
+                        <div class="injection-content">
+                            <h3 class="injection-title">Controle de Injeção</h3>
+                            <p class="injection-description">Selecione o jogo para injetar o sistema</p>
+                            
+                            <div class="injection-buttons">
+                                <button class="btn-inject" id="inject-ff-btn" onclick="injectFreeFireNormal()">
+                                    <span class="btn-inject-icon" id="inject-ff-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M3 3L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"></circle>
+    </svg></span>
+                                    <span class="btn-inject-text">Injetar no FF</span>
+                                </button>
+                                <button class="btn-inject" id="inject-ffmax-btn" onclick="injectFreeFireMax()">
+                                    <span class="btn-inject-icon" id="inject-ffmax-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M3 3L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"></circle>
+    </svg></span>
+                                    <span class="btn-inject-text">Injetar no FF MAX</span>
+                                </button>
+                            </div>
+                            
+                            <div class="injection-status-area">
+                                <div class="injection-status" id="injection-status">
+                                    <span class="status-indicator"></span>
+                                    <span class="status-text">Aguardando injeção...</span>
+                                </div>
+                            </div>
+                            
+                            <div class="injection-log-wrapper">
+                                <label class="log-label">Log de Injeção:</label>
+                                <textarea id="injection-log" class="injection-log" readonly="" placeholder="Os logs de injeção aparecerão aqui..."></textarea>
+                            </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <aside id="key-access-gate" class="key-access-gate" hidden aria-labelledby="key-access-title">
+        <form id="key-access-form" class="key-access-card" novalidate>
+            <p class="key-manager-eyebrow">SENSIAURA / PRIVATE</p>
+            <h2 id="key-access-title">Acceso al sistema de keys</h2>
+            <p>Introduce la contraseña de administración para continuar.</p>
+            <label for="key-access-password">Contraseña</label>
+            <input id="key-access-password" type="password" autocomplete="off" placeholder="Escribe la contraseña" required>
+            <p id="key-access-message" class="key-access-message" role="alert" hidden></p>
+            <div class="key-access-actions">
+                <button id="cancel-key-access" class="key-manager-secondary" type="button">Cancelar</button>
+                <button class="key-manager-primary" type="submit">Acceder</button>
+            </div>
+        </form>
+    </aside>
+
+    <aside id="key-manager" class="key-manager" hidden aria-labelledby="key-manager-title">
+        <div class="key-manager-card">
+            <div class="key-manager-header">
+                <div>
+                    <p class="key-manager-eyebrow">SENSIAURA / ADMIN</p>
+                    <h2 id="key-manager-title">Gestor de keys</h2>
+                    <p>Genera y valida credenciales locales para el panel.</p>
+                </div>
+                <button id="close-key-manager" class="key-manager-close" type="button" aria-label="Cerrar gestor">×</button>
+            </div>
+            <div class="key-manager-grid">
+                <form id="key-generator-form" class="key-manager-box" novalidate>
+                    <h3>Generar una key</h3>
+                    <label for="key-duration">Duración</label>
+                    <select id="key-duration" name="duration">
+                        <option value="1">1 día</option>
+                        <option value="7">7 días</option>
+                        <option value="30">30 días</option>
+                        <option value="custom">Personalizada</option>
+                    </select>
+                    <div id="custom-duration-wrap" class="custom-duration-wrap" hidden>
+                        <label for="custom-duration">Cantidad de días</label>
+                        <input id="custom-duration" name="customDuration" type="number" min="1" max="3650" step="1" placeholder="Ej.: 14">
+                    </div>
+                    <button class="key-manager-primary" type="submit">Generar key</button>
+                    <p id="key-generator-message" class="key-manager-message" role="status" hidden></p>
+                </form>
+                <div class="key-manager-box">
+                    <h3>Validar una key</h3>
+                    <label for="key-validation-input">Key</label>
+                    <input id="key-validation-input" type="text" autocomplete="off" placeholder="SENS-XXXX-XXXX-XXXX">
+                    <button id="validate-key-button" class="key-manager-secondary" type="button">Validar key</button>
+                    <p id="key-validation-message" class="key-manager-message" role="status" hidden></p>
+                </div>
+            </div>
+            <div class="key-manager-list-box">
+                <div class="key-manager-list-header">
+                    <div>
+                        <h3>Keys sincronizadas en la nube</h3>
+                        <p id="key-cloud-status" class="key-cloud-status" role="status">Conectando con Firebase...</p>
+                    </div>
+                    <div class="key-manager-list-actions">
+                        <button id="export-keys-button" class="key-manager-secondary" type="button">Exportar</button>
+                        <button id="import-keys-button" class="key-manager-secondary" type="button">Importar</button>
+                        <button id="clear-keys-button" class="key-manager-danger" type="button">Borrar todas</button>
+                    </div>
+                </div>
+                <div id="keys-list" class="keys-list"></div>
+            </div>
+        </div>
+    </aside>
+
+    <script src="assets/js/sw-update.js">
+window.addEventListener('load', function() {
+            document.getElementById('macrohack').style.display = 'flex';
+        });
+</script>
+    <script src="assets/js/auth.js?v=keys-admin-reset-20261012"></script>
+    <script src="assets/js/icons.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/injection.js"></script>
+    <script src="assets/js/keys.js?v=keys-admin-reset-20261012"></script>
+
+
+</body>
+<!--Pdz Cracked-->
+</html>

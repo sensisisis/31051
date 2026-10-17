@@ -1,0 +1,33 @@
+name: Build Fax Aura Key Panel IPA
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build unsigned iOS app
+        run: |
+          xcodebuild \
+            -project key-panel-ios/KeyPanelApp.xcodeproj \
+            -target KeyPanelApp \
+            -configuration Release \
+            -sdk iphoneos \
+            CONFIGURATION_BUILD_DIR="$PWD/build/App" \
+            build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=""
+      - name: Package IPA
+        run: |
+          mkdir -p build/Payload
+          cp -R build/App/KeyPanelApp.app build/Payload/
+          (cd build && zip -qr FaxAura-Key-Panel-unsigned.ipa Payload)
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: FaxAura-Key-Panel-unsigned
+          path: build/FaxAura-Key-Panel-unsigned.ipa
