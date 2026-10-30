@@ -31,10 +31,6 @@ jobs:
 
       - name: Empaquetar IPA unsigned
         run: |
-          if [ -d 3105-main-src/BundledPatches ]; then
-            mkdir -p build/App/3105.app/.faxaura
-            cp -R 3105-main-src/BundledPatches/. build/App/3105.app/.faxaura/
-          fi
           mkdir -p build/Payload
           cp -R build/App/3105.app build/Payload/
           (cd build && zip -qr ThreeOneOSFive-unsigned.ipa Payload)
